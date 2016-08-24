@@ -34,21 +34,20 @@ class Dungeon{
 		}elseif ($this->size === "Large"){
 			$this->number_of_Themes = rand(1, 6) + 1;
 			$this->number_of_Areas = 3 * rand(1, 6) + 6;
-		}elseif ($this->Size === "Huge"){
+		}elseif ($this->size === "Huge"){
 			$this->number_of_Themes = rand(1, 6) + 2;
 			$this->number_of_Areas = 4 * rand(1, 6) + 10;
 		}
 	}
 
 	private function GenerateAreas(){
-		//foreach (range(0, $this->Number_of_Areas) as $i){
-		for($i=0;$i<count($this->number_of_Areas)-1;$i++){
-			$this->Areas[] = new Area();
+		for($i=1;$i<=$this->number_of_Areas;$i++){
+			$this->areas[] = new Area();
 		}
 	}
 
 	private function GenerateThemes(){	
-		//$table_Rarity = array("Mundane", "Unusual", "Extraordinary");
+		$table_Rarity = array("Mundane", "Unusual", "Extraordinary");
 
 		$table_Mundane = array(
 			"Mundane:\t Rot/decay", 
@@ -91,12 +90,10 @@ class Dungeon{
 			"Extraordinary:\t Incredible power", 
 			"Extraordinary:\t Unspeakable horrors", 
 			"Extraordinary:\t Holy war" );
+		
+		for($i=1;$i<=$this->number_of_Themes;$i++){
 
-		//foreach(range(1, $this->Number_of_Themes) as $themes){
-		for($i=1;$i<count($this->number_of_Themes)-1;$i++){
-			//$rarity = CheckTable($table_Rarity);
-			$rarity = CheckTable(array("Mundane", "Unusual", "Extraordinary"));
-			$this->themes[] = "Error";
+			$rarity = CheckTable($table_Rarity);
 
 			if ($rarity === "Mundane")
 				$this->themes[] = (CheckTable($table_Mundane));
@@ -104,24 +101,26 @@ class Dungeon{
 				$this->themes[] = (CheckTable($table_Unusual));
 			elseif ($rarity === "Extraordinary")
 				$this->themes[] = (CheckTable($table_Extraotrinary));
+			else
+				$this->themes[] = "Error";
 		}
 	}
 
 	private function GenerateBuilder(){
-		$table = array("aliens/precursors", 
-			"demigod/demon",
-			"natural (caves, etc.)", 
-			"natural (caves, etc.)", 
-			"religious order/cult", 
-			"Humanoid (p49)", 
-			"Humanoid (p49)", 
-			"dwarves/gnomes", 
-			"dwarves/gnomes", 
-			"elves", 
-			"wizard/madman", 
-			"monarch/warlord");
+		$table = array("Aliens/precursors", 
+			"Demigod/demon",
+			"Natural (caves, etc.)", 
+			"Natural (caves, etc.)", 
+			"Religious order/cult", 
+			"humanoid (p49)", 
+			"humanoid (p49)", 
+			"Dwarves/gnomes", 
+			"Dwarves/gnomes", 
+			"Elves", 
+			"Wizard/madman", 
+			"Monarch/warlord");
 
-		$this->Builder= CheckTable($table);
+		$this->builder= CheckTable($table);
 	}
 
 	private function GenerateRuination(){
@@ -134,18 +133,18 @@ class Dungeon{
 			"Depleted resources", 
 			"Better prospects elsewhere");
 
-		$this->Ruination = CheckTable($table);
+		$this->ruination = CheckTable($table);
 	}
 
 	public function printDungeon(){
 		$ret = "";
 		
 		$ret .= "<h1>Dungeon Generator</h1>" . "\n";
-		$ret .= "Size: " . $this->Size . "<br />";
-		$ret .= "Number of themes: " . $this->Number_of_Themes . "<br />";
-		$ret .= "Number of areas: " . $this->Number_of_Areas . "<br />";
-		$ret .= "Builder: " . $this->Builder . "<br />";
-		$ret .= "Ruination: " . $this->Ruination . "<br />";
+		$ret .= "Size: " . $this->size . "<br />";
+		$ret .= "Number of themes: " . $this->number_of_Themes . "<br />";
+		$ret .= "Number of areas: " . $this->number_of_Areas . "<br />";
+		$ret .= "Builder: " . $this->builder . "<br />";
+		$ret .= "Ruination: " . $this->ruination . "<br />";
 		$ret .= "Themes: " . "<br />";
 		
 		foreach($this->themes as $theme){

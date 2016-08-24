@@ -15,10 +15,10 @@ class Area{
 		$ret = "";
 		
 		$ret .= "<h2>AREA:</h2>";
-		$ret .= "Themed: " . $this->Themed . "<br />";
-		$ret .= "Rarity: " . $this->Rarity . "<br />";
-		$ret .= "Discovery: <br>&emsp;" . $this->Discovery . "<br />";
-		$ret .= "Danger: <br>&emsp;" . $this->Danger . "<br />";
+		$ret .= "Themed: " . $this->themed . "<br />";
+		$ret .= "Rarity: " . $this->rarity . "<br />";
+		$ret .= "Discovery: <br>&emsp;" . $this->discovery . "<br />";
+		$ret .= "Danger: <br>&emsp;" . $this->danger . "<br />";
 		
 		//echo($ret);
 		return $ret;

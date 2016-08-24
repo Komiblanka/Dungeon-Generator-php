@@ -5,7 +5,7 @@
 </HEAD>
 <BODY>
 <?php
-include_once './kernel.php';
+include_once 'lib/kernel.php';
 $body = _main();
 echo($body);
 ?>

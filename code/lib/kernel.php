@@ -1,6 +1,6 @@
 <?php
-include_once './obj/Area.php';
-include_once './obj/Dungeon.php';
+include_once './lib/Area.php';
+include_once './lib/Dungeon.php';
 function CheckTable($table){
 	return $table[rand(0, count($table) - 1)];
 }
