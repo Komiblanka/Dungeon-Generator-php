@@ -2,11 +2,11 @@
 class Dungeon{
 	private $size = "";
 	private $number_of_Themes = 0;
-	private $number_of_Areas = 0;
+	public $number_of_Areas = 0;
 	private $builder = "";
 	private $ruination = "";
 	private $themes = array(); 
-	private $areas = array(); 
+	public $areas = array(); 
 
 
 	public function __construct(){
@@ -156,7 +156,9 @@ class Dungeon{
 	}
 
 	public function printAreas(){
-
+		echo "This is a test";
+		echo($this->areas[0]->Print_Area());
+		echo "End of test";
 		foreach($this->areas as $area){
 			$ret .= $area->Print_Area();
 		}

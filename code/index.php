@@ -28,7 +28,7 @@ $myDungeon = new Dungeon();
 		<div class="col-md-12">
 			<div class="jumbotron">
 				<h2>
-					Main characteristics
+					Dungeon Generator	
 				</h2>
 				<p>
 					This page generates a dungeon for Dungeon World based in Perilous Worlds
@@ -61,18 +61,30 @@ $myDungeon = new Dungeon();
 			</p>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h2>
-				Areas	
-			</h2>
-			<p>
-				<?php
-				echo $myDungeon->printAreas();
-				?>
-			</p>
-		</div>
-	</div>
+		<h2>
+			Areas	
+		</h2>
+
+
+	<?php
+		for($i=0;$i<=$myDungeon->number_of_Areas -1;$i++){
+			if($i % 4 == 4){
+				echo("<div class=\"row\">");
+			}
+
+			echo("	<div class=\"col-md-3 well\" id=\"area\">");
+			echo("	<p>");
+			echo($myDungeon->areas[$i]->Print_Area());	
+			echo("	</p>");
+			echo("	</div>");
+
+			if($i % 4 == 4){
+				echo("	</div>");
+			}
+		}
+	?>
+
+
 </div>
 
     <script src="js/jquery.min.js"></script>
