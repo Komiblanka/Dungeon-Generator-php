@@ -14,11 +14,11 @@ class Area{
 	public function Print_Area(){
 		$ret = "";
 		
-		$ret .= "<h2>AREA:</h2>";
-		$ret .= "Themed: " . $this->themed . "<br />";
-		$ret .= "Rarity: " . $this->rarity . "<br />";
-		$ret .= "Discovery: <br>&emsp;" . $this->discovery . "<br />";
-		$ret .= "Danger: <br>&emsp;" . $this->danger . "<br />";
+		$ret .= "<h3>AREA:</h3>";
+		$ret .= "<b>Themed:</b> " . $this->themed . "<br />";
+		$ret .= "<b>Rarity:</b> " . $this->rarity . "<br />";
+		$ret .= "<b>Discovery:</b> <br>&emsp;" . $this->discovery . "<br />";
+		$ret .= "<b>Danger:</b> <br>&emsp;" . $this->danger . "<br />";
 		
 		//echo($ret);
 		return $ret;

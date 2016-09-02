@@ -50,46 +50,46 @@ class Dungeon{
 		$table_Rarity = array("Mundane", "Unusual", "Extraordinary");
 
 		$table_Mundane = array(
-			"Mundane:\t Rot/decay", 
-			"Mundane:\t Torture/agony", 
-			"Mundane:\t Madness", 
-			"Mundane:\t All is lost", 
-			"Mundane:\t Noble sacrifice", 
-			"Mundane:\t Savage fury", 
-			"Mundane:\t Survival", 
-			"Mundane:\t Criminal activity", 
-			"Mundane:\t Secrets/treachery", 
-			"Mundane:\t Tricks and traps", 
-			"Mundane:\t Invasion/infestation", 
-			"Mundane:\t Factions at war" );
+			"<b>Mundane:</b>\t Rot/decay", 
+			"<b>Mundane:</b>\t Torture/agony", 
+			"<b>Mundane:</b>\t Madness", 
+			"<b>Mundane:</b>\t All is lost", 
+			"<b>Mundane:</b>\t Noble sacrifice", 
+			"<b>Mundane:</b>\t Savage fury", 
+			"<b>Mundane:</b>\t Survival", 
+			"<b>Mundane:</b>\t Criminal activity", 
+			"<b>Mundane:</b>\t Secrets/treachery", 
+			"<b>Mundane:</b>\t Tricks and traps", 
+			"<b>Mundane:</b>\t Invasion/infestation", 
+			"<b>Mundane:</b>\t Factions at war" );
 
 		$table_Unusual = array(
-			"Unusual:\t Creation/invention", 
-			"Unusual:\t Element (p50)", 
-			"Unusual:\t Knowledge/learning", 
-			"Unusual:\t Growth/expansion", 
-			"Unusual:\t Deepening mystery", 
-			"Unusual:\t Transformation/change", 
-			"Unusual:\t Chaos and destruction", 
-			"Unusual:\t Shadowy forces", 
-			"Unusual:\t Forbidden knowledge", 
-			"Unusual:\t Poison/disease", 
-			"Unusual:\t Corruption/blight", 
-			"Unusual:\t Impending disaster" );
+			"<b>Unusual:</b>\t Creation/invention", 
+			"<b>Unusual:</b>\t Element (p50)", 
+			"<b>Unusual:</b>\t Knowledge/learning", 
+			"<b>Unusual:</b>\t Growth/expansion", 
+			"<b>Unusual:</b>\t Deepening mystery", 
+			"<b>Unusual:</b>\t Transformation/change", 
+			"<b>Unusual:</b>\t Chaos and destruction", 
+			"<b>Unusual:</b>\t Shadowy forces", 
+			"<b>Unusual:</b>\t Forbidden knowledge", 
+			"<b>Unusual:</b>\t Poison/disease", 
+			"<b>Unusual:</b>\t Corruption/blight", 
+			"<b>Unusual:</b>\t Impending disaster" );
 
 		$table_Extraotrinary = array(
-			"Extraordinary:\t Scheming evil", 
-			"Extraordinary:\t Divination/scrying", 
-			"Extraordinary:\t Blasphemy", 
-			"Extraordinary:\t Arcane research", 
-			"Extraordinary:\t Occult forces", 
-			"Extraordinary:\t An ancient curse", 
-			"Extraordinary:\t Mutation", 
-			"Extraordinary:\t The unquiet dead", 
-			"Extraordinary:\t Bottomless hunger", 
-			"Extraordinary:\t Incredible power", 
-			"Extraordinary:\t Unspeakable horrors", 
-			"Extraordinary:\t Holy war" );
+			"<b>Extraordinary:</b>\t Scheming evil", 
+			"<b>Extraordinary:</b>\t Divination/scrying", 
+			"<b>Extraordinary:</b>\t Blasphemy", 
+			"<b>Extraordinary:</b>\t Arcane research", 
+			"<b>Extraordinary:</b>\t Occult forces", 
+			"<b>Extraordinary:</b>\t An ancient curse", 
+			"<b>Extraordinary:</b>\t Mutation", 
+			"<b>Extraordinary:</b>\t The unquiet dead", 
+			"<b>Extraordinary:</b>\t Bottomless hunger", 
+			"<b>Extraordinary:</b>\t Incredible power", 
+			"<b>Extraordinary:</b>\t Unspeakable horrors", 
+			"<b>Extraordinary:</b>\t Holy war" );
 		
 		for($i=1;$i<=$this->number_of_Themes;$i++){
 
@@ -139,25 +139,30 @@ class Dungeon{
 	public function printDungeon(){
 		$ret = "";
 		
-		$ret .= "<h1>Dungeon Generator</h1>" . "\n";
-		$ret .= "Size: " . $this->size . "<br />";
-		$ret .= "Number of themes: " . $this->number_of_Themes . "<br />";
-		$ret .= "Number of areas: " . $this->number_of_Areas . "<br />";
-		$ret .= "Builder: " . $this->builder . "<br />";
-		$ret .= "Ruination: " . $this->ruination . "<br />";
-		$ret .= "Themes: " . "<br />";
+		$ret .= "<b>Size:</b> " . $this->size . "<br />";
+		$ret .= "<b>Number of themes:</b> " . $this->number_of_Themes . "<br />";
+		$ret .= "<b>Number of areas:</b> " . $this->number_of_Areas . "<br />";
+		$ret .= "<b>Builder:</b> " . $this->builder . "<br />";
+		$ret .= "<b>Ruination:</b> " . $this->ruination . "<br />";
 		
+		return $ret;
+	}
+
+	public function printThemes(){		
 		foreach($this->themes as $theme){
-			$ret .= "&emsp;" . $theme . "<br>";
+			$ret .= $theme . "<br>";
 		}
+		return $ret;
+	}
+
+	public function printAreas(){
 
 		foreach($this->areas as $area){
 			$ret .= $area->Print_Area();
 		}
-		
-		//echo($ret);
-		
+
 		return $ret;
 	}
+		
 }
 ?>
