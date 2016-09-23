@@ -1,2 +1,3 @@
 #deny all access
+RewriteEngine On
 deny from all
