@@ -1,2 +1,4 @@
 #deny all access
+RewriteEngine Off
+RewriteEngine On
 deny from all
