@@ -3,3 +3,7 @@ order allow,deny
   allow from all
 </Files>
 
+<Files "index">
+  allow from all
+</Files>
+
