@@ -1,5 +1,5 @@
 order allow,deny
-<Files ~ "\.(php|html|css|js|)$">
+<Files ~ "\.(html|css|js|)$">
   allow from all
 </Files>
 
@@ -7,3 +7,6 @@ order allow,deny
   allow from all
 </Files>
 
+<Files "index.php">
+  allow from all
+</Files>
