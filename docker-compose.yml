@@ -6,3 +6,4 @@ services:
    - "5000:80"
   volumes:
    - ./code:/var/www/html/
+   - ./index.php:/var/www/html/index.php
