@@ -12,7 +12,7 @@ $myDungeon = new Dungeon();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 3, from LayoutIt!</title>
+    <title>Dungeon generator!</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
