@@ -10,7 +10,6 @@ class Dungeon{
 
 
 	public function __construct($size){
-		print "*****" . $size;
 		switch ($size) {
 			case 1:
 				$this->GenerateSize();
