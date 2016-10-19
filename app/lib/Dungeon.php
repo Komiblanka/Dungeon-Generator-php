@@ -9,8 +9,27 @@ class Dungeon{
 	public $areas = array(); 
 
 
-	public function __construct(){
-		$this->GenerateSize();
+	public function __construct($size){
+		print "*****" . $size;
+		switch ($size) {
+			case 1:
+				$this->GenerateSize();
+				break;
+			case 2:
+				$this->size = "Small";
+				break;
+			case 3:
+				$this->size = "Medium";
+				break;
+			case 4:
+				$this->size = "Large";
+				break;
+			case 5:
+				$this->size = "Huge";
+				break;
+			default:
+				$this->GenerateSize();
+		}
 		$this->GenerateNumberOfThemesAndAreas();
 		$this->GenerateBuilder();
 		$this->GenerateThemes();

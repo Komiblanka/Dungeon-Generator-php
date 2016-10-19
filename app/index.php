@@ -2,7 +2,7 @@
 include_once './lib/Area.php';
 include_once './lib/Dungeon.php';
 include_once './lib/kernel.php';
-$myDungeon = new Dungeon();
+$myDungeon = new Dungeon($_GET["size"]);
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +33,29 @@ $myDungeon = new Dungeon();
 				<p>
 					This page generates a dungeon for Dungeon World based in Perilous Worlds
 				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="index.php">Generate again!</a>
-				</p>
 			</div>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h2>
+				Choose Size
+			</h2>
+			<form>
+				<select class="selectpicker" name="size">
+					<option value="1">Random</option>
+					<option value="2">Small</option>
+					<option value="3">Medium</option>
+					<option value="4">Large</option>
+					<option value="5">Huge</option>
+				</select>
+
+				<input type="submit" class="btn btn-primary btn-large" href="index.php" value="Generate!">
+			</form>
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="col-md-6">
 			<h2>
@@ -61,9 +78,10 @@ $myDungeon = new Dungeon();
 			</p>
 		</div>
 	</div>
-		<h2>
-			Areas	
-		</h2>
+	
+	<h2>
+		Areas	
+	</h2>
 
 
 	<?php
