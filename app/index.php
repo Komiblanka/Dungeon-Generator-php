@@ -45,10 +45,10 @@ $myDungeon = new Dungeon($_GET["size"]);
 			<form>
 				<select class="selectpicker" name="size">
 					<option value="1">Random</option>
-					<option value="2">Small</option>
-					<option value="3">Medium</option>
-					<option value="4">Large</option>
-					<option value="5">Huge</option>
+					<option value="2"<?php if($_GET["size"]==2){echo " selected";} ?>>Small</option>
+					<option value="3"<?php if($_GET["size"]==3){echo " selected";} ?>>Medium</option>
+					<option value="4"<?php if($_GET["size"]==4){echo " selected";} ?>>Large</option>
+					<option value="5"<?php if($_GET["size"]==5){echo " selected";} ?>>Huge</option>
 				</select>
 
 				<input type="submit" class="btn btn-primary btn-large" href="index.php" value="Generate!">
